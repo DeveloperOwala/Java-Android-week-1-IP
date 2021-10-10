@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ed.mathgame.GameActivity">
+    tools:context="com.example.mymathgaming.GameActivity">
+
 
     <RelativeLayout
         android:layout_width="344dp"
