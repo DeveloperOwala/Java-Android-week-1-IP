@@ -4,14 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mymathgaming.GameActivity">
-
-
     <RelativeLayout
         android:layout_width="344dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="8dp">
-
         <TextView
             android:id="@+id/textPartB"
             android:layout_width="wrap_content"
@@ -22,7 +19,6 @@
             android:layout_toEndOf="@+id/textOperator"
             android:text="2"
             android:textAppearance="@android:style/TextAppearance.Large" />
-
         <TextView
             android:id="@+id/textOperator"
             android:layout_width="wrap_content"
@@ -32,7 +28,6 @@
             android:layout_centerHorizontal="true"
             android:text="x"
             android:textAppearance="@android:style/TextAppearance.Large" />
-
         <TextView
             android:id="@+id/textPartA"
             android:layout_width="wrap_content"
@@ -43,7 +38,6 @@
             android:layout_toStartOf="@+id/textOperator"
             android:text="2"
             android:textAppearance="@android:style/TextAppearance.Large" />
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
@@ -52,7 +46,6 @@
             android:layout_below="@+id/textOperator"
             android:layout_marginTop="90dp"
             android:text="=" />
-
         <Button
             android:id="@+id/buttonChoice1"
             android:layout_width="wrap_content"
@@ -61,7 +54,6 @@
             android:layout_below="@+id/textView6"
             android:layout_marginEnd="9dp"
             android:layout_marginTop="45dp" />
-
         <Button
             android:id="@+id/buttonChoice2"
             android:layout_width="wrap_content"
@@ -69,7 +61,6 @@
             android:layout_alignEnd="@+id/buttonChoice1"
             android:layout_below="@+id/buttonChoice1"
             android:layout_marginTop="22dp" />
-
         <Button
             android:id="@+id/buttonChoice3"
             android:layout_width="wrap_content"
