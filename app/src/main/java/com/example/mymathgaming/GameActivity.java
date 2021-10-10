@@ -53,18 +53,18 @@ public class GameActivity extends AppCompatActivity {
                 answerGiven =Integer.parseInt(""+ buttonObjectChoice1.getText());
 
                 if(answerGiven == correctAnswer ){
-                    Toast.makeText(getApplicationContext(),"WELL DONE",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"ALL CORRECT",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getApplicationContext(),"Sorry that's wrong",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"ALL INCORRECT",Toast.LENGTH_LONG).show();
                 }
                 break;
             case R.id.buttonChoice3:
                 BreakIterator buttonObjectChoice3 = null;
                 answerGiven= Integer.parseInt(""+buttonObjectChoice3.getText());
                 if(answerGiven==correctAnswer){
-                    Toast.makeText(getApplicationContext(),"WELL DONE",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"ALL CORRECT",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getApplicationContext(),"Sorry that's wrong",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"ALL INCORRECT",Toast.LENGTH_LONG).show();
                     break;
                 }
         }
