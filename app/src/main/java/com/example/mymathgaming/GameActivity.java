@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.BreakIterator;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -33,17 +36,20 @@ public class GameActivity extends AppCompatActivity {
         buttonObjectChoice2.setText("" + wrongAnswer1);
         buttonObjectChoice3.setText("" + wrongAnswer2);
 
-        buttonObjectChoice1.setOnClickListener(this);
-        buttonObjectChoice2.setOnClickListener(this);
-        buttonObjectChoice3.setOnClickListener(this);
+        buttonObjectChoice1.setOnClickListener((View.OnClickListener) this);
+        buttonObjectChoice2.setOnClickListener((View.OnClickListener) this);
+        buttonObjectChoice3.setOnClickListener((View.OnClickListener) this);
     }
     public void onClick(View view){
 
         int answerGiven = 0  ;
+        int correctAnswer = 0;
 
         switch(view.getId()){
 
             case R.id.buttonChoice1:
+            case R.id.buttonChoice2:
+                BreakIterator buttonObjectChoice1 = null;
                 answerGiven =Integer.parseInt(""+ buttonObjectChoice1.getText());
 
                 if(answerGiven == correctAnswer ){
@@ -52,15 +58,8 @@ public class GameActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Sorry that's wrong",Toast.LENGTH_LONG).show();
                 }
                 break;
-            case R.id.buttonChoice2:
-                answerGiven=Integer.parseInt(""+buttonObjectChoice2.getText());
-                if(answerGiven==correctAnswer){
-                    Toast.makeText(getApplicationContext(),"WELL DONE",Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Sorry that's wrong",Toast.LENGTH_LONG).show();
-                }
-                break;
             case R.id.buttonChoice3:
+                BreakIterator buttonObjectChoice3 = null;
                 answerGiven= Integer.parseInt(""+buttonObjectChoice3.getText());
                 if(answerGiven==correctAnswer){
                     Toast.makeText(getApplicationContext(),"WELL DONE",Toast.LENGTH_LONG).show();
@@ -71,4 +70,3 @@ public class GameActivity extends AppCompatActivity {
         }
     }
     }
-}
