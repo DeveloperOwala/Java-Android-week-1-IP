@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity">
+    tools:context="com.example.ed.mathgame.GameActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textPartB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textOperator"
+            android:layout_alignBottom="@+id/textOperator"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@+id/textOperator"
+            android:text="2"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <TextView
+            android:id="@+id/textOperator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textPartA"
+            android:layout_alignBottom="@+id/textPartA"
+            android:layout_centerHorizontal="true"
+            android:text="x"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <TextView
+            android:id="@+id/textPartA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginTop="56dp"
+            android:layout_toStartOf="@+id/textOperator"
+            android:text="2"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textOperator"
+            android:layout_below="@+id/textOperator"
+            android:layout_marginTop="90dp"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/buttonChoice1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textPartB"
+            android:layout_below="@+id/textView6"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="45dp" />
+
+        <Button
+            android:id="@+id/buttonChoice2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonChoice1"
+            android:layout_below="@+id/buttonChoice1"
+            android:layout_marginTop="22dp" />
+
+        <Button
+            android:id="@+id/buttonChoice3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonChoice2"
+            android:layout_below="@+id/buttonChoice2"
+            android:layout_marginTop="41dp" />
+    </RelativeLayout>
+</>
