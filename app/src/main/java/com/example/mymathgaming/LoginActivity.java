@@ -34,17 +34,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        mPasswordLoginButton.setOnClickListener(new View.OnClickListener()
-        {
+
+//        mPasswordLoginButton.setOnClickListener((View.OnClickListener) this);
+
+        mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
-                validate(mEmailEditText.getText().toString(), mPasswordEditText.getText().toString());
+                validate();
             }
         });
 
     }
-    public void validate(String userName, String userPassword){
-       if((userName == "android") && (userPassword =="android")){
+//    String userName, String userPassword
+    //login validation
+    public void validate(){
+       if((mEmailEditText.toString() == "android") && (mPasswordEditText.toString() =="android")){
          Intent intent = new Intent(this, NewsListActivity.class);
          startActivity(intent);
        }else{
@@ -53,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
            if(count == 0){
                mPasswordLoginButton.setEnabled(false);
            }
-//           Toast.makeText()
        }
     }
 }
