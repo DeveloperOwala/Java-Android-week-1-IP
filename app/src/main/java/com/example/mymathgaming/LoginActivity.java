@@ -3,6 +3,7 @@ package com.example.mymathgaming;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,20 +36,18 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-//        mPasswordLoginButton.setOnClickListener((View.OnClickListener) this);
 
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
-                validate();
+                validate(mEmailEditText.getText().toString(), mPasswordEditText.getText().toString());
             }
         });
 
     }
-//    String userName, String userPassword
-    //login validation
-    public void validate(){
-       if((mEmailEditText.toString() == "android") && (mPasswordEditText.toString() =="android")){
+    @SuppressLint("SetTextI18n")
+    public void validate(String userName, String userPassword){
+       if((userName.equals("android")) && (userPassword.equals("android"))){
          Intent intent = new Intent(this, NewsListActivity.class);
          startActivity(intent);
        }else{
