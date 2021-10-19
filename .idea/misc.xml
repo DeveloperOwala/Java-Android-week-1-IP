@@ -6,10 +6,12 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_game.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_imageview.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/activity_listview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.11041666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_news_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_newsupdate.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
