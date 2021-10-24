@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.moringaschool.newsupdates.NewsDetailFragment;
-import com.moringaschool.newsupdates.models.Article;
+
+import com.example.mymathgaming.NewsDetailFragment;
+import com.example.mymathgaming.models.Article;
 
 import java.util.List;
 
