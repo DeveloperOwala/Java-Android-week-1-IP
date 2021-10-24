@@ -89,7 +89,7 @@ public class NewsDetailFragment extends Fragment implements View.OnClickListener
             String uid = user.getUid();
             DatabaseReference reference = FirebaseDatabase
                     .getInstance()
-                    .getReference(com.moringaschool.newsupdates.Constants.FIREBASE_CHILD_TOP_HEADLINES)
+                    .getReference(Constants.FIREBASE_CHILD_TOP_HEADLINES)
                     .child(uid);
 
             DatabaseReference pushRef = reference.push();
