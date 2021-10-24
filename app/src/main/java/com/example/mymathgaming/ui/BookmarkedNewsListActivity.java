@@ -16,10 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.moringaschool.newsupdates.Constants;
-import com.moringaschool.newsupdates.R;
-import com.moringaschool.newsupdates.adapters.articleAdapter;
-import com.moringaschool.newsupdates.models.Article;
 
 public class BookmarkedNewsListActivity extends AppCompatActivity {
 
