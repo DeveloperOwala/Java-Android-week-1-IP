@@ -18,7 +18,6 @@ public class NewsScopesArrayAdapter extends ArrayAdapter {
     @Override
     public Object getItem(int position) {
         String headlines = mHeadlines[position];
-//        String briefings = mBriefings[position];
         return String.format("%s", headlines);
     }
 

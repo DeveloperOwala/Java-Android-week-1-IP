@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.mymathgaming.models.Article;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.moringaschool.newsupdates.models.Article;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -84,15 +84,6 @@ public class NewsDetailFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-
-//        if (v == mBookmarkButton) {
-//            DatabaseReference reference = FirebaseDatabase
-//                    .getInstance()
-//                    .getReference(Constants.FIREBASE_CHILD_TOP_HEADLINES);
-//            reference.push().setValue(mTop_headlines);
-//            Toast.makeText(getContext(), "Bookmarked!", Toast.LENGTH_SHORT).show();
-//        }
-
         if (v == mBookmarkButton) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
