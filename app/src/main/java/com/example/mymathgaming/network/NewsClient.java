@@ -1,6 +1,7 @@
 package com.example.mymathgaming.network;
 
-import static com.moringaschool.newsupdates.Constants.NEWSUPDATES_BASE_URL;
+
+import static com.example.mymathgaming.Constants.NEWSUPDATES_BASE_URL;
 
 import java.io.IOException;
 
