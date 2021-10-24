@@ -1,7 +1,6 @@
-package com.example.mymathgaming;
+package com.example.mymathgaming.network;
 
-import static com.example.mymathgaming.Constants.NEWSUPDATES_API_KEY;
-import static com.example.mymathgaming.Constants.NEWSUPDATES_BASE_URL;
+import static com.moringaschool.newsupdates.Constants.NEWSUPDATES_BASE_URL;
 
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ public class NewsClient {
                         @Override
                         public Response intercept(Chain chain) throws IOException {
                             Request newRequest  = chain.request().newBuilder()
-                                    .addHeader("Authorization", NEWSUPDATES_API_KEY)
+//                                    .addHeader("Authorization", NEWSUPDATES_API_KEY)
                                     .build();
                             return chain.proceed(newRequest);
                         }

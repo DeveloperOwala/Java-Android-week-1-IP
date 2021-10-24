@@ -1,10 +1,11 @@
 
-package com.example.mymathgaming;
+package com.example.mymathgaming.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
 
 public class NewsUpdatesSearchResponse {
 
@@ -16,7 +17,7 @@ public class NewsUpdatesSearchResponse {
     private Integer totalResults;
     @SerializedName("articles")
     @Expose
-    private List<com.example.mymathgaming.Article> articles = null;
+    private List<Article> articles = null;
 
     /**
      * No args constructor for use in serialization
@@ -31,7 +32,7 @@ public class NewsUpdatesSearchResponse {
      * @param articles
      * @param status
      */
-    public NewsUpdatesSearchResponse(String status, Integer totalResults, List<com.example.mymathgaming.Article> articles) {
+    public NewsUpdatesSearchResponse(String status, Integer totalResults, List<Article> articles) {
         super();
         this.status = status;
         this.totalResults = totalResults;
@@ -54,11 +55,11 @@ public class NewsUpdatesSearchResponse {
         this.totalResults = totalResults;
     }
 
-    public List<com.example.mymathgaming.Article> getArticles() {
+    public List<Article> getArticles() {
         return articles;
     }
 
-    public void setArticles(List<com.example.mymathgaming.Article> articles) {
+    public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
 

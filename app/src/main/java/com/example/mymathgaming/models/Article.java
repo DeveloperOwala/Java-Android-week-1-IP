@@ -1,14 +1,15 @@
 
-package com.example.mymathgaming;
+package com.example.mymathgaming.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 
 public class Article {
 
     @SerializedName("source")
     @Expose
-    private com.example.mymathgaming.Source source;
+    private Source source;
     @SerializedName("author")
     @Expose
     private String author;
@@ -29,7 +30,10 @@ public class Article {
     private String publishedAt;
     @SerializedName("content")
     @Expose
-    private Object content;
+    private String content;
+
+    private String pushId;
+
 
     /**
      * No args constructor for use in serialization
@@ -49,7 +53,7 @@ public class Article {
      * @param url
      * @param content
      */
-    public Article(com.example.mymathgaming.Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, Object content) {
+    public Article(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content, String pushId) {
         super();
         this.source = source;
         this.author = author;
@@ -59,13 +63,14 @@ public class Article {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
         this.content = content;
+        this.pushId = pushId;
     }
 
-    public com.example.mymathgaming.Source getSource() {
+    public Source getSource() {
         return source;
     }
 
-    public void setSource(com.example.mymathgaming.Source source) {
+    public void setSource(Source source) {
         this.source = source;
     }
 
@@ -117,12 +122,19 @@ public class Article {
         this.publishedAt = publishedAt;
     }
 
-    public Object getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(Object content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
 }
