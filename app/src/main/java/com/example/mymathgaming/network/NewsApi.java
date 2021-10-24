@@ -1,6 +1,6 @@
 package com.example.mymathgaming.network;
 
-import com.moringaschool.newsupdates.models.NewsUpdatesSearchResponse;
+import com.example.mymathgaming.models.NewsUpdatesSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -18,5 +18,3 @@ public interface NewsApi {
             @Query("apiKey") String apiKey
     );
 }
-
-//https://newsapi.org/v2/top-headlines
