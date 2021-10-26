@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "511987188865",
+    "project_id": "newsupdate-5f420",
+    "storage_bucket": "newsupdate-5f420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511987188865:android:4cc6a2d95411e1d9ed7980",
+        "android_client_info": {
+          "package_name": "com.example.mymathgaming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511987188865-n28ndmgke82besqahkgvft97k9tdo0rd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvKADFI_ZwOZGDT-yFsPmwDQVBtwuvt-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511987188865-n28ndmgke82besqahkgvft97k9tdo0rd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
