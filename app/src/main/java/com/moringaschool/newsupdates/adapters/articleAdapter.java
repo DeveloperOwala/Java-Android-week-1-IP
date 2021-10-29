@@ -64,6 +64,7 @@ public class articleAdapter extends FirebaseRecyclerAdapter<Article, articleAdap
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                System.out.println("vkcckmcmk"+snapshot);
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     Article users = ds.getValue(Article.class);
                     Log.d("result", "User name: " + users.getTitle() + ", email " + users.getDescription());
