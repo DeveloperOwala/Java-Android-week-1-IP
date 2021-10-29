@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,22 +16,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.moringaschool.newsupdates.R;
 import com.moringaschool.newsupdates.models.Article;
 import com.moringaschool.newsupdates.ui.NewsDetailActivity;
+import com.moringaschool.newsupdates.util.CustomFilter;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
-    private List<Article> mTop_headlines;
+public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> implements Filterable {
+    public ArrayList<Article> mTop_headlines,filterList;
     private Context mContext;
+    CustomFilter filter;
 
-    public NewsListAdapter(Context context, List<Article> top_headlines) {
+    public NewsListAdapter(Context context, ArrayList<Article> top_headlines) {
         mContext = context;
         mTop_headlines = top_headlines;
+        this.filterList=top_headlines;
     }
 
     @Override
@@ -85,5 +91,15 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
 
 
 
+    }
+
+    @Override
+    public Filter getFilter() {
+        if(filter==null)
+        {
+            filter=new CustomFilter(filterList,this);
+        }
+
+        return filter;
     }
 }
