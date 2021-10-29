@@ -81,5 +81,9 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
             mAuthorTextView.setText(top_headlines.getAuthor());
 //            mPublishedAtTextView.setText(top_headlines.getPublishedAt());
         }
+
+
+
+
     }
 }

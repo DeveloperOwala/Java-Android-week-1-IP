@@ -1,7 +1,9 @@
 package com.moringaschool.newsupdates.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moringaschool.newsupdates.Constants;
 import com.moringaschool.newsupdates.adapters.NewsListAdapter;
 import com.moringaschool.newsupdates.models.Article;
 import com.moringaschool.newsupdates.network.NewsApi;
@@ -27,7 +30,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class NewsListActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentAddress;
     public static final String TAG = NewsListActivity.class.getSimpleName();
 
 
@@ -53,6 +60,11 @@ public class NewsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_newsupdate);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.NEWSUPDATES_API_KEY, null);
+        if(mRecentAddress != null){
+//            fetchRestaurants(mRecentAddress);
+        }
         //User's next page display welcome message, Using Intents.
         Log.v("NewsScopeActivity", "In the onItemClickListener!");
         final Intent intent = getIntent();
@@ -81,15 +93,18 @@ public class NewsListActivity extends AppCompatActivity {
                 }
             }
 
+
+
             @Override
             public void onFailure(Call<NewsUpdatesSearchResponse> call, Throwable t) {
                 Log.e(TAG, "onFailure:", t);
                 hideProgressBar();
                 showFailureMessage();
             }
+
+
         });
     }
-
 
 
     private void showFailureMessage() {
@@ -109,4 +124,6 @@ public class NewsListActivity extends AppCompatActivity {
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
     }
+
+
 }

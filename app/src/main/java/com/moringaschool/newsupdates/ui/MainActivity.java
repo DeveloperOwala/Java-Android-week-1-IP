@@ -37,22 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        mGetStartedReference = FirebaseDatabase
-//                .getInstance()
-//                .getReference()
-//                .child(Constants.FIREBASE_CHILD_TOP_HEADLINES);
-//
-//        mGetStartedReferenceListener = mGetStartedReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -88,17 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
-
-
-
-
     @Override
     public void onClick(View view) {
         if (view == mGetStartedButton) {
-//            String user = mEditTextPersonName.getText().toString();
             Intent intent = new Intent(MainActivity.this, NewsListActivity.class);
-//            intent.putExtra("user", user);
             startActivity(intent);
         }
 
@@ -107,13 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
-
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        mGetStartedReference.removeEventListener(mGetStartedReferenceListener);
-//    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -130,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onOptionsItemSelected(item);
     }
-
     private void logout() {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);

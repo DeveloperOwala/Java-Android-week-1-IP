@@ -29,13 +29,16 @@ import com.moringaschool.newsupdates.R;
 import com.moringaschool.newsupdates.models.Article;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 public class articleAdapter extends FirebaseRecyclerAdapter<Article, articleAdapter.personsViewholder> {
 
     private static final String TAG = "Bookmared news";
     DatabaseReference reference;
     Context mContext;
     private Article article;
-
+    ArrayList<String> players; ArrayList<String> filterList;
+//    CustomFilter filter;
 
 
     public articleAdapter(@NonNull FirebaseRecyclerOptions<Article> options) {
@@ -70,26 +73,19 @@ public class articleAdapter extends FirebaseRecyclerAdapter<Article, articleAdap
                     Picasso.get().load(users.getUrlToImage()).into(holder.NewsImageView);
                     holder.TitleNameTextView.setText(users.getTitle());
                     holder.authorTextView.setText(users.getAuthor());
-
-
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
     }
-
-
     class personsViewholder extends RecyclerView.ViewHolder {
         public TextView TitleNameTextView, authorTextView;
         public ImageView NewsImageView;
         public personsViewholder(@NonNull View itemView)
         {
             super(itemView);
-
             TitleNameTextView = itemView.findViewById(R.id.TitleNameTextView);
             authorTextView = itemView.findViewById(R.id.authorTextView);
             NewsImageView = itemView.findViewById(R.id.NewsImageView);

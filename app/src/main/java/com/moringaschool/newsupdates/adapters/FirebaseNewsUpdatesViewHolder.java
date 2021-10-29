@@ -33,13 +33,6 @@ import butterknife.BindView;
 
 public class FirebaseNewsUpdatesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-//    public TextView textView;
-//    View mView;
-//    @BindView(R.id.NewsImageView) ImageView mImageLabel;
-//    @BindView(R.id.TitleNameTextView) TextView mTitleNameTextView;
-//    @BindView(R.id.categoryTextView) TextView mCategoryTextView;
-//    @BindView(R.id.authorTextView) TextView mAuthorTextView;
-//    @BindView(R.id.publishedAtTextView) TextView mPublishedAtTextView;
     @BindView(R.id.BookmarkButton) Button mBookmarkButton;
 
     Context mContext;
@@ -61,8 +54,6 @@ public class FirebaseNewsUpdatesViewHolder extends RecyclerView.ViewHolder imple
 //        categoryTextView = itemView.findViewById(R.id.categoryTextView);
         authorTextView = itemView.findViewById(R.id.authorTextView);
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -100,22 +91,4 @@ public class FirebaseNewsUpdatesViewHolder extends RecyclerView.ViewHolder imple
     }
 }
 
-//    public void bindArticle(Article top_headlines) {
-//        TextView mTitleNameTextView = (TextView) mView.findViewById(R.id.TitleNameTextView);
-//        ImageView mNewsImageView = (ImageView) mView.findViewById(R.id.NewsImageView);
-//        TextView mAuthorTextView = (TextView) mView.findViewById(R.id.authorTextView);
-//
-//        mTitleNameTextView.setText(top_headlines.getTitle());
-//        Picasso.get().load(top_headlines.getUrlToImage()).into(mNewsImageView);
-//        mAuthorTextView.setText(top_headlines.getAuthor());
-//    }
 
-//        DatabaseReference ref = FirebaseDatabase
-//                .getInstance()
-//                .getReference(Constants.FIREBASE_CHILD_TOP_HEADLINES);
-//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-//        final ArrayList<Article> top_headlines = new ArrayList<>();
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TOP_HEADLINES).child(uid);
-//        reference.addListenerForSingleValueEvent(new ValueEventListener() {
