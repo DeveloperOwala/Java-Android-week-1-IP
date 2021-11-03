@@ -1,7 +1,6 @@
 package com.moringaschool.newsupdates;
 
 import com.moringaschool.newsupdates.BuildConfig;
-
 public class Constants {
 
     public static final String NEWSUPDATES_BASE_URL = "https://newsapi.org/v2/";

@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +21,7 @@ import com.moringaschool.newsupdates.network.NewsClient;
 import com.moringaschool.newsupdates.models.NewsUpdatesSearchResponse;
 import com.moringaschool.newsupdates.R;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -88,8 +91,27 @@ public class NewsListActivity extends AppCompatActivity {
                 showFailureMessage();
             }
         });
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(mRecyclerview);
     }
 
+ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.START | ItemTouchHelper.END, 0) {
+    @Override
+    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+       int fromPosition = viewHolder.getLayoutPosition();
+       int toPosition = target.getAbsoluteAdapterPosition();
+
+        Collections.swap(top_headlines, fromPosition, toPosition);
+       recyclerView.getAdapter().notifyItemMoved(fromPosition, toPosition);
+        return false;
+    }
+
+    @Override
+    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+    }
+};
 
 
     private void showFailureMessage() {
