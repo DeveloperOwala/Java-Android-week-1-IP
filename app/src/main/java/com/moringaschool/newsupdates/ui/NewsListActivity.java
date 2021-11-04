@@ -13,8 +13,10 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +30,7 @@ import com.moringaschool.newsupdates.models.NewsUpdatesSearchResponse;
 import com.moringaschool.newsupdates.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -48,12 +51,14 @@ public class NewsListActivity extends AppCompatActivity {
 //    @BindView(R.id.editTextPersonName) TextView mEditTextPersonName;
 
 
-
 //    RecyclerView implementation
 
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerview;
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerview;
+    @BindView(R.id.errorTextView)
+    TextView mErrorTextView;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
 
     private NewsListAdapter mAdapter;
 
@@ -68,7 +73,7 @@ public class NewsListActivity extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentAddress = mSharedPreferences.getString(Constants.NEWSUPDATES_API_KEY, null);
-        if(mRecentAddress != null){
+        if (mRecentAddress != null) {
 //            fetchRestaurants(mRecentAddress);
         }
         //User's next page display welcome message, Using Intents.
@@ -100,7 +105,6 @@ public class NewsListActivity extends AppCompatActivity {
             }
 
 
-
             @Override
             public void onFailure(Call<NewsUpdatesSearchResponse> call, Throwable t) {
                 Log.e(TAG, "onFailure:", t);
@@ -112,8 +116,12 @@ public class NewsListActivity extends AppCompatActivity {
         });
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(mRecyclerview);
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem searchViewItem = menu.findItem(R.id.action_search);
@@ -133,6 +141,7 @@ public class NewsListActivity extends AppCompatActivity {
             }
         });
         return super.onCreateOptionsMenu(menu);
+
     }
 
 
@@ -154,5 +163,21 @@ public class NewsListActivity extends AppCompatActivity {
         mProgressBar.setVisibility(View.GONE);
     }
 
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.START | ItemTouchHelper.END, 0) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            int fromPosition = viewHolder.getLayoutPosition();
+            int toPosition = target.getAbsoluteAdapterPosition();
 
+            Collections.swap(top_headlines, fromPosition, toPosition);
+            recyclerView.getAdapter().notifyItemMoved(fromPosition, toPosition);
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+        }
+    };
 }
+
